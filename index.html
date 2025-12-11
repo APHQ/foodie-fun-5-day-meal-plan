@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Day Budget Meal Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e0 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid #ff6b6b;
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .recipe-header .text-block {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .recipe-header img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            order: 2;
+        }
+        
+        .day-badge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .recipe-title {
+            font-size: 1.8em;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+        
+        .cost-badge {
+            background: #fff5f5;
+            color: #ff6b6b;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid #ffccc7;
+            display: inline-block;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            background: #fff5f5;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #636e72;
+        }
+        
+        .meta-item strong {
+            color: #ff6b6b;
+        }
+        
+        .budget-tip {
+            background: linear-gradient(135deg, #ffe8e0 0%, #fff5f5 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff8e53;
+            font-style: italic;
+            color: #2d3436;
+        }
+        
+        .section-title {
+            color: #ff6b6b;
+            font-size: 1.2em;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+        }
+        
+        .ingredients-list {
+            columns: 2;
+            column-gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .ingredients-list li {
+            margin-bottom: 10px;
+            color: #2d3436;
+            break-inside: avoid;
+        }
+        
+        .method {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            color: #2d3436;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .recipe-title {
+                font-size: 1.4em;
+            }
+            
+            .ingredients-list {
+                columns: 1;
+            }
+
+            .recipe-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .recipe-header img {
+                max-width: 100%;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 5-Day Budget Meal Plan</h1>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="text-block">
+                    <div class="day-badge">🍝 DAY 1</div>
+                    <h2 class="recipe-title">Creamy Buffalo Chicken Spaghetti</h2>
+                    <div class="cost-badge">$2.85 / serving</div>
+                </div>
+                <img src="photos_of_recipes/1_Creamy_Buffalo_Chicken_Spaghetti.png" alt="Creamy Buffalo Chicken Spaghetti">
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item"><strong>Serves:</strong> 4</div>
+            </div>
+            <div class="budget-tip">
+                <strong>💡 Budget Tip:</strong> Chicken breast + pasta + a few pantry sauces = low cost, high flavor
+            </div>
+            <h3 class="section-title">Ingredients</h3>
+            <ul class="ingredients-list">
+                <li>300g spaghetti</li>
+                <li>4 chicken breasts (~600g)</li>
+                <li>Smoked paprika, garlic granules</li>
+                <li>6 tbsp buffalo sauce</li>
+                <li>3 tsp garlic purée</li>
+                <li>300ml chicken stock</li>
+                <li>100g light cream cheese</li>
+                <li>Fresh parsley</li>
+                <li>Salt & pepper</li>
+                <li>Ranch for drizzling</li>
+            </ul>
+            <h3 class="section-title">Method</h3>
+            <div class="method">
+                Boil pasta. Season and cook chicken in a pan, coat in buffalo sauce, and set aside. Add garlic to the pan for 30 seconds, then add buffalo sauce + stock. Stir in cream cheese until smooth. Toss in pasta and parsley. Slice chicken, place on top, and drizzle with ranch + buffalo.
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="text-block">
+                    <div class="day-badge">🍅 DAY 2</div>
+                    <h2 class="recipe-title">Creamy Tomato Spaghetti with Jarlsberg-Stuffed Meatballs</h2>
+                    <div class="cost-badge">$3.75 / serving</div>
+                </div>
+                <img src="photos_of_recipes/2_Creamy_Tomato_Spaghetti_with_Jarlsberg-Stuffed_Meatballs.png" alt="Creamy Tomato Spaghetti with Jarlsberg-Stuffed Meatballs">
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item"><strong>Serves:</strong> 4</div>
+            </div>
+            <div class="budget-tip">
+                <strong>💡 Budget Tip:</strong> You stretch 1 lb of beef into 4 large servings
+            </div>
+            <h3 class="section-title">Ingredients - Meatballs</h3>
+            <ul class="ingredients-list">
+                <li>500g minced beef</li>
+                <li>75g breadcrumbs</li>
+                <li>1 diced onion</li>
+                <li>1 egg</li>
+                <li>Garlic, herbs, salt</li>
+                <li>~120g cheese (Jarlsberg or cheaper Swiss/mozzarella alternative)</li>
+            </ul>
+            <h3 class="section-title">Ingredients - Sauce & Pasta</h3>
+            <ul class="ingredients-list">
+                <li>300g spaghetti</li>
+                <li>Onion + garlic</li>
+                <li>Tomato purée</li>
+                <li>400ml passata</li>
+                <li>200ml chicken stock</li>
+                <li>120ml cream</li>
+                <li>Fresh parsley</li>
+            </ul>
+            <h3 class="section-title">Method</h3>
+            <div class="method">
+                Mix meatball ingredients, place a cheese cube in the center, form balls, brown in pan, then bake 15 minutes. Cook spaghetti. Sauté onion/garlic, add tomato purée, passata, stock, and cream. Add meatballs back in, toss with pasta, garnish with parsley.
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="text-block">
+                    <div class="day-badge">🥘 DAY 3</div>
+                    <h2 class="recipe-title">Pizza Pesto One-Pot Rice</h2>
+                    <div class="cost-badge">$2.40 / serving</div>
+                </div>
+                <img src="photos_of_recipes/3_Pizza_Pesto_One-Pot_Rice.png" alt="Pizza Pesto One-Pot Rice">
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item"><strong>Serves:</strong> 4</div>
+            </div>
+            <div class="budget-tip">
+                <strong>💡 Budget Tip:</strong> Uses leftover rice + low-cost pantry items
+            </div>
+            <h3 class="section-title">Ingredients</h3>
+            <ul class="ingredients-list">
+                <li>150g diced bacon</li>
+                <li>80g pepperoni</li>
+                <li>1 diced onion</li>
+                <li>4 tsp garlic</li>
+                <li>2 tbsp tomato purée</li>
+                <li>4 tbsp pesto (any kind)</li>
+                <li>300g passata</li>
+                <li>200ml stock</li>
+                <li>500g cooked rice</li>
+                <li>120g mozzarella</li>
+            </ul>
+            <h3 class="section-title">Method</h3>
+            <div class="method">
+                Cook bacon + half the pepperoni. Add onion, garlic, tomato purée, pesto. Pour in passata + stock and reduce slightly. Add rice, mix well, top with mozzarella + remaining pepperoni. Grill until bubbling and golden.
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="text-block">
+                    <div class="day-badge">🌮 DAY 4</div>
+                    <h2 class="recipe-title">Cheesy Bolognese Enchiladas</h2>
+                    <div class="cost-badge">$2.90 / serving</div>
+                </div>
+                <img src="photos_of_recipes/4_Cheesy_Bolognese_Enchiladas.png" alt="Cheesy Bolognese Enchiladas">
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item"><strong>Makes:</strong> 8 enchiladas (2 per serving)</div>
+            </div>
+            <div class="budget-tip">
+                <strong>💡 Budget Tip:</strong> Uses leftover bolognese and inexpensive wraps
+            </div>
+            <h3 class="section-title">Ingredients</h3>
+            <ul class="ingredients-list">
+                <li>8 tortillas</li>
+                <li>Leftover bolognese</li>
+                <li>120g cheese</li>
+                <li>2 tbsp butter</li>
+                <li>2 tbsp flour</li>
+                <li>300ml milk</li>
+                <li>1 tsp mustard (optional)</li>
+                <li>Salt & pepper</li>
+            </ul>
+            <h3 class="section-title">Method</h3>
+            <div class="method">
+                Make béchamel: melt butter, add flour, whisk in milk until thick. Stir in half the cheese. Fill each tortilla with bolognese + mozzarella. Place in baking dish, top with béchamel + remaining cheese. Bake 15–20 min at 180°C.
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="text-block">
+                    <div class="day-badge">🔥 DAY 5</div>
+                    <h2 class="recipe-title">Fajita Chicken Mac n Cheese</h2>
+                    <div class="cost-badge">$3.20 / serving</div>
+                </div>
+                <img src="photos_of_recipes/5_Fajita_Chicken_Mac_n_Cheese.png" alt="Fajita Chicken Mac n Cheese">
+            </div>
+            <div class="recipe-meta">
+                <div class="meta-item"><strong>Serves:</strong> 4</div>
+            </div>
+            <div class="budget-tip">
+                <strong>💡 Budget Tip:</strong> One-pot meal with cheap pasta + peppers
+            </div>
+            <h3 class="section-title">Ingredients</h3>
+            <ul class="ingredients-list">
+                <li>500g chicken breast</li>
+                <li>Chicken + fajita seasoning</li>
+                <li>1 onion</li>
+                <li>3 peppers</li>
+                <li>3 tsp garlic</li>
+                <li>300g pasta</li>
+                <li>400ml hot chicken stock</li>
+                <li>600ml warm milk</li>
+                <li>1 tsp mustard</li>
+                <li>120g cheese</li>
+                <li>Parsley/chili flakes</li>
+            </ul>
+            <h3 class="section-title">Method</h3>
+            <div class="method">
+                Season and cook chicken, set aside. Cook onions + peppers in same pan. Add garlic. Add pasta, stock, then milk. Cook until pasta is tender and sauce thickens. Stir in cheese + mustard. Add chicken back in. Garnish and serve.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
